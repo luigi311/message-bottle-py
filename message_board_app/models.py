@@ -23,7 +23,7 @@ class Response(models.Model):
   time_modified = models.DateTimeField(auto_now=True,auto_now_add=False)
   createdby = models.ForeignKey(User, related_name="user_responses")
   thread = models.ForeignKey(Thread)
-  parent_response = models.ForeignKey('Response', default=None, related_name='responses')
+  parent_response = models.ForeignKey('Response', blank=True, null=True, default=None, related_name='responses')
 
   def __str__(self):
     return self.title
