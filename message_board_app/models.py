@@ -6,34 +6,36 @@ from django.contrib.auth.models import User
 
 # Main thread class 
 class Thread(models.Model):
-  title = models.CharField(max_length=255) # Title of the thread
-  message = models.TextField() # Thread message, large text should use TextField instead of CharField
-  time_created = models.DateTimeField(auto_now=False,auto_now_add=True) # Timestamp of when the thread was first created 
-  time_modified = models.DateTimeField(auto_now=True,auto_now_add=False) # Timestamp for when the thread was last modified
-  createdby = models.ForeignKey(User)
+    title = models.CharField(max_length=255) # Title of the thread
+    message = models.TextField() # Thread message, large text should use TextField instead of CharField
+    time_created = models.DateTimeField(auto_now=False,auto_now_add=True) # Timestamp of when the thread was first created 
+    time_modified = models.DateTimeField(auto_now=True,auto_now_add=False) # Timestamp for when the thread was last modified
+    createdby = models.ForeignKey(User)
 
-  def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
+
 
 # Response class that corresponds to a main thread
 class Response(models.Model):
-  title = models.CharField(max_length=255) 
-  message = models.TextField()
-  time_created = models.DateTimeField(auto_now=False,auto_now_add=True) 
-  time_modified = models.DateTimeField(auto_now=True,auto_now_add=False)
-  createdby = models.ForeignKey(User, related_name="user_responses")
-  thread = models.ForeignKey(Thread)
-  parent_response = models.ForeignKey('Response', blank=True, null=True, default=None, related_name='responses')
+    title = models.CharField(max_length=255) 
+    message = models.TextField()
+    time_created = models.DateTimeField(auto_now=False,auto_now_add=True) 
+    time_modified = models.DateTimeField(auto_now=True,auto_now_add=False)
+    createdby = models.ForeignKey(User, related_name="user_responses")
+    thread = models.ForeignKey(Thread)
+    parent_response = models.ForeignKey('Response', blank=True, null=True, default=None, related_name='responses')
 
-  def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
+
 
 # User class that extends auth.models.User 
 class ThreadUser(models.Model):
-  thread_user = models.OneToOneField(User)
-  dob = models.DateField(auto_now=False,auto_now_add=False) # Date of Birth for the user
-  bio = models.TextField() # Bio about the user to allow them to share information about themselfs to others.
+    thread_user = models.OneToOneField(User)
+    dob = models.DateField(auto_now=False,auto_now_add=False) # Date of Birth for the user
+    bio = models.TextField() # Bio about the user to allow them to share information about themselfs to others.
 
-  def __str__(self):
-    return self.thread_user.user.username
+    def __str__(self):
+        return self.thread_user.user.username
 
