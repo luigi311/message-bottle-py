@@ -16,6 +16,6 @@ class UpdateThreadView(UpdateView):
 	template_name = 'updatethread.html'
 	fields = ['title', 'message', 'time_created', 'time_modified', 'createdby']
 	
-class DetailThreadView(TemplateView):
-	model = ThreadView
+class DetailThreadView(DetailView):
+	model = Thread
 	template_name='threadview.html'
