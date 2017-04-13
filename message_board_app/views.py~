@@ -11,5 +11,5 @@ class HomeView(TemplateView):
 class ResponseCreateView(CreateView):
     model = Response
     template_name='respond.html'
-    fields = ['title','message','thread','parent_response']
+    fields = ['title','message','created_by','thread','parent_response']
 
