@@ -17,15 +17,19 @@ workon message-botte
 ```
 git clone https://github.com/rmedinahu/message-bottle-py.git
 ```
-4. Create sql database
+4. Install the required python packages inside the virtual enviornment
+```
+pip install -r requirements/requirements.txt
+```
+5. Create sql database
 ```
 python manage.py migrate
 ```
-5. Create Superuser so you can mess around with the admin page
+6. Create Superuser so you can mess around with the admin page
 ```
 python manage.py createsuperuser
 ```
-6. Run the server to make sure everything works
+7. Run the server to make sure everything works
 ```
 python manage.py runserver
 ```
