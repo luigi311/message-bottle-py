@@ -16,13 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from message_board_app.views import HomeView, ThreadCreateView, UpdateThreadView, ResponseCreateView
+from message_board_app.views import HomeView, ThreadCreateView, UpdateThreadView, ResponseCreateView, ThreadDetailView
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^thread/add/$', ThreadCreateView.as_view(), name='thread_add'),
     url(r'^admin/', admin.site.urls),
-    url(r'^thread', DetailThreadView.as_view(), name='thread_view'),
+    url(r'^thread', ThreadDetailView.as_view(), name='thread_view'),
     
     url(r'^thread/edit/(?P<pk>\d+)/$', UpdateThreadView.as_view(), name = 'thread_update'),
     url(r'^response/add', ResponseCreateView.as_view(), name='response_add'),
