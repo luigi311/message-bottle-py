@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView, ListView, CreateView ,UpdateView
 
-from .models import Thread
+from .models import Thread, Response
 
 class HomeView(TemplateView):
     template_name='home.html'
@@ -19,3 +19,8 @@ class UpdateThreadView(UpdateView):
 class DetailThreadView(TemplateView):
 	model = ThreadView
 	template_name='threadview.html'
+
+class ResponseCreateView(CreateView):
+    model = Response
+    template_name='respond.html'
+    fields = ['title','message','thread','parent_response']
