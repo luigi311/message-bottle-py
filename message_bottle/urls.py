@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from message_board_app.views import HomeView
+from message_board_app.views import HomeView, UpdateThreadView
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
     url(r'^admin/', admin.site.urls),
+
+    url(r'^thread/edit/(?P<pk>\d+)/$', UpdateThreadView.as_view(), name = 'thread_update')
 ]
