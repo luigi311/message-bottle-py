@@ -9,12 +9,12 @@ class HomeView(TemplateView):
 class ThreadCreateView(CreateView):
 	model = Thread
 	template_name='thread_create.html'
-	fields = ['title','message','time_created','time_modified','createdby']
+	fields = ['title','message','createdby']
 
 class UpdateThreadView(UpdateView):
 	model = Thread
 	template_name = 'updatethread.html'
-	fields = ['title', 'message', 'time_created', 'time_modified', 'createdby']
+	fields = ['title','message','createdby']
 	
 class ThreadDetailView(DetailView):
 	model = Thread
@@ -24,3 +24,13 @@ class ResponseCreateView(CreateView):
     model = Response
     template_name='respond.html'
     fields = ['title','message','thread','parent_response']
+
+class ResponseDetailView(DetailView):
+	model = Response
+	template_name='responseview.html'
+	
+class UpdateResponseView(UpdateView):
+	model = Response
+	template_name = 'updateresponse.html'
+	fields = ['title','message','thread','parent_response']
+
