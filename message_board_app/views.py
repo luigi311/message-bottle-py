@@ -28,3 +28,9 @@ class ResponseCreateView(CreateView):
 class ResponseDetailView(DetailView):
 	model = Response
 	template_name='responseview.html'
+	
+class UpdateResponseView(UpdateView):
+	model = Response
+	template_name = 'updateresponse.html'
+	fields = ['title','message','thread','parent_response']
+
