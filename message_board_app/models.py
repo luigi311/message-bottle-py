@@ -18,6 +18,7 @@ class Thread(models.Model):
         return self.title
 
 
+
 # Response class that corresponds to a main thread
 class Response(models.Model):
     title = models.CharField(max_length=255) 
@@ -31,6 +32,8 @@ class Response(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('updateresponse', kwargs={'pk':self.pk})
 
 # User class that extends auth.models.User 
 class ThreadUser(models.Model):
