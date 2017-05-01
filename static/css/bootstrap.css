@@ -3968,7 +3968,7 @@ tbody.collapse.show {
 }
 
 .navbar-text {
-  display: inline;
+  display: inline-block;
   padding-top: .425rem;
   padding-bottom: .425rem;
 }
