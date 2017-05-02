@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^thread/add/$', ThreadCreateView.as_view(), name='thread_add'),
     url(r'^admin/', admin.site.urls),
     url(r'^thread/(?P<pk>\d+)/$', ThreadDetailView.as_view(), name='thread_view'),
-    url(r'^response', ResponseDetailView.as_view(), name='response_view'),
+    url(r'^response/(?P<pk>\d+)/$', ResponseDetailView.as_view(), name='response_view'),
     url(r'^thread/edit/(?P<pk>\d+)/$', UpdateThreadView.as_view(), name = 'thread_update'),
     url(r'^response/add', ResponseCreateView.as_view(), name='response_add'),
     url(r'^response/edit/(?P<pk>\d+)/$', UpdateResponseView.as_view(), name = 'response_update')

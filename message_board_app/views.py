@@ -6,7 +6,7 @@ from .models import Thread, Response
 class HomeView(TemplateView):
     template_name='home.html'
 
-class ThreadCreateView(CreateView):
+class ThreadCreateView(CreateView): 
 	model = Thread
 	template_name='thread_create.html'
 	fields = ['title','message','createdby']
