@@ -34,7 +34,7 @@ class Response(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('updateresponse', kwargs={'pk':self.pk})
+        return reverse('response_view', kwargs={'pk':self.pk})
 
 # User class that extends auth.models.User 
 class ThreadUser(models.Model):
