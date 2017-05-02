@@ -16,7 +16,8 @@ class Thread(models.Model):
 
     def __str__(self):
         return self.title
-
+    def get_absolute_url(self):
+        return reverse('thread_view', kwargs={'pk': self.pk})
 
 
 # Response class that corresponds to a main thread
@@ -33,7 +34,7 @@ class Response(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('updateresponse', kwargs={'pk':self.pk})
+        return reverse('response_view', kwargs={'pk':self.pk})
 
 # User class that extends auth.models.User 
 class ThreadUser(models.Model):
