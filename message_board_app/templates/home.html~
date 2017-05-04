@@ -1,9 +1,11 @@
+<!-- home.html -->
 {% extends "base.html" %}
 
 {% block header_row %} {% endblock header_row %}
 
 {% block content_row %} 
 <div class="col-md-12">
+<p>LIVE CHAT</p>
 <html>
 <head>
   <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
