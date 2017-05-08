@@ -6,6 +6,12 @@ from .models import Thread, Response
 class HomeView(TemplateView):
     template_name='home.html'
 
+class ThreadListView(ListView):
+	model = Thread
+	template_name = 'thread_list.html'
+	#def get_context_data(self, **kwargs):
+    #   context = super(ThreadListView, self).get_context_data(**kwargs)
+
 class ThreadCreateView(CreateView): 
 	model = Thread
 	template_name='thread_create.html'

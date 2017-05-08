@@ -19,11 +19,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-from message_board_app.views import HomeView, ThreadCreateView, UpdateThreadView, ResponseCreateView, ThreadDetailView, ResponseDetailView, UpdateResponseView
+from message_board_app.views import HomeView, ThreadListView, ThreadCreateView, UpdateThreadView, ResponseCreateView, ThreadDetailView, ResponseDetailView, UpdateResponseView
 
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^threadlist/$', ThreadListView.as_view(), name='thread_list'),
     url(r'^thread/add/$', ThreadCreateView.as_view(), name='thread_add'),
     url(r'^admin/', admin.site.urls),
     url(r'^thread/(?P<pk>\d+)/$', ThreadDetailView.as_view(), name='thread_view'),
@@ -31,4 +32,4 @@ urlpatterns = [
     url(r'^thread/edit/(?P<pk>\d+)/$', UpdateThreadView.as_view(), name = 'thread_update'),
     url(r'^response/add', ResponseCreateView.as_view(), name='response_add'),
     url(r'^response/edit/(?P<pk>\d+)/$', UpdateResponseView.as_view(), name = 'response_update')
-]
+    ]

@@ -1,5 +1,15 @@
 <!-- base.html -->
 {% load static %}
+{% block additional_styles %}
+<style>
+   body {
+    background-image: url({& static 'css/beach.png'  %});
+    background-repeat:no-repeat;
+    background-size:100%;
+   }
+</style>
+{% endblock %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -32,7 +42,7 @@
                 <a class="nav-link" href="/response/add">Chat<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Threads<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/threadlist">Threads<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#">About Us<span class="sr-only">(current)</span></a>

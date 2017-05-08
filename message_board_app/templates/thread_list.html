@@ -1,0 +1,21 @@
+<!-- thread_list.html -->
+
+{% extends "base.html" %}
+
+{% block header_row %} 
+    <div class="col-md-12"><h3>Thread List</div>
+    <ul class="list-unstyled">
+    {% for item in object_list %}
+    	<li>
+    	{{ item.name }}
+    	<a href="{% url 'thread_view' item.pk %}" class="btn btn-link">{{ item }}<i class="fa fa-eye"></i></a>
+    	</li>
+    {% endfor %}
+    </ul>
+{% endblock header_row %}
+
+{% block content_row %} 
+<div class="col-md-12">
+
+</div>
+{% endblock content_row %} 
