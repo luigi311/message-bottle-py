@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-from message_board_app.views import HomeView, ThreadCreateView, UpdateThreadView, ResponseCreateView, ThreadDetailView, ResponseDetailView, UpdateResponseView
+from message_board_app.views import HomeView, ThreadCreateView, UpdateThreadView, ResponseCreateView, ThreadDetailView, ResponseDetailView, UpdateResponseView, UserCreateView, UserUpdateView, UserDetailView
 
 
 urlpatterns = [
@@ -30,5 +30,8 @@ urlpatterns = [
     url(r'^response/(?P<pk>\d+)/$', ResponseDetailView.as_view(), name='response_view'),
     url(r'^thread/edit/(?P<pk>\d+)/$', UpdateThreadView.as_view(), name = 'thread_update'),
     url(r'^response/add', ResponseCreateView.as_view(), name='response_add'),
-    url(r'^response/edit/(?P<pk>\d+)/$', UpdateResponseView.as_view(), name = 'response_update')
+    url(r'^response/edit/(?P<pk>\d+)/$', UpdateResponseView.as_view(), name = 'response_update'),
+    url(r'^user/add/$', UserCreateView.as_view(), name='user_add'),
+    url(r'^user/(?P<pk>\d+)/$', UserDetailView.as_view(), name='user_view'),
+    url(r'^user/edit/(?P<pk>\d+)/$', UserUpdateView.as_view(), name = 'user_update')
 ]

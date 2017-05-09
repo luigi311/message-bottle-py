@@ -1,0 +1,16 @@
+<!-- user_create.html -->
+
+{% extends "base.html" %}
+
+{% block header_row %} 
+    <div class="col-md-12"><h3>Create User</div>
+{% endblock header_row %}
+
+{% block content_row %} 
+<div class="col-md-12">
+	<form action="" method="post">{% csrf_token %}
+	    <table>{{ form.as_table }}</table>
+	    <input type="submit" class="btn btn-success" value="Add User!" />
+	</form>
+</div>
+{% endblock content_row %} 

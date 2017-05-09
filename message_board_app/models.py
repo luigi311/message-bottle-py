@@ -44,4 +44,9 @@ class ThreadUser(models.Model):
 
     def __str__(self):
         return self.thread_user.user.username
+    def get_absolute_url(self):
+        return reverse('user_view', kwargs={'pk':self.pk})
+
+
+
 
